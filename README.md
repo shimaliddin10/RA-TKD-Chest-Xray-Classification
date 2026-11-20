@@ -39,13 +39,14 @@ parameters and FLOPs (see `report_model_complexity.py`).
 
 ![Original vs. Teacher Grad-CAM vs. Student Token Selector](assets/OrignalVsTeacher-GradCamVsStudent_TokenSelector.png)
 
-Side-by-side comparison of the raw chest X-ray, the DenseNet161 teacher's
-Grad-CAM attention (from the final dense block, `denseblock4`), and the
-RA-TKD student's learned region-aware token-selection scores (from
-`RegionAwareTokenSelector`, upsampled from the 14x14 patch grid). This
-demonstrates that the lightweight student attends to anatomically similar
-regions as the much larger teacher despite retaining only a subset of
-image tokens.
+Representative examples compare the original chest X-ray,
+the DenseNet161 teacher's class-specific Grad-CAM map, and
+the student's class-agnostic region-aware token-selector scores.
+
+These visualisations support qualitative inspection of the regions
+highlighted by each method. They were not evaluated quantitatively
+against expert annotations and do not establish causal reasoning
+or clinical correctness.
 
 ## Installation
 
