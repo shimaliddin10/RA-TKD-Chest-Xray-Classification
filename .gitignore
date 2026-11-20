@@ -1,0 +1,114 @@
+# =========================================================
+# .gitignore for MSc_AI (RA-TKD-DeiT Chest X-Ray Project)
+
+# =========================================================
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ---- Virtual environments ----
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# ---- Jupyter Notebook ----
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# ---- Dataset files (NIH ChestX-ray14) ----
+# Never commit raw images or large dataset archives.
+data/
+dataset/
+archive/
+*.zip
+*.tar
+*.tar.gz
+*.7z
+images/*.png
+images/*.jpg
+images/*.jpeg
+!assets/*.jpg
+!assets/*.jpeg
+!assets/*.png
+
+# Raw / intermediate dataset CSVs (paths, splits) — not results.
+train.csv
+val.csv
+test.csv
+*.csv.prerebalance.bak
+
+# ---- Model checkpoints and large binaries ----
+*.pth
+*.pt
+*.ckpt
+*.h5
+*.onnx
+checkpoints/
+
+# ---- Large intermediate outputs (NOT small results CSVs) ----
+# Raw per-image prediction/probability dumps, large arrays, etc.
+predictions_raw/
+*.npy
+*.npz
+
+# ---- Logs and experiment outputs ----
+*.log
+logs/
+runs/
+wandb/
+tensorboard/
+
+# NOTE: small, human-readable RESULTS csvs are intentionally
+# NOT ignored (e.g. model_complexity_report.csv, per-epoch
+# training logs, test AUROC summaries, per-class AUROC tables).
+# These should be committed as evidence of reported results.
+
+# ---- OS / editor cruft ----
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ---- Environment / secrets ----
+.env
+*.env
+*.pem
+*.key
+
+# ---- Distribution / packaging ----
+*.manifest
+*.spec
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ---- Test / coverage ----
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.cache
